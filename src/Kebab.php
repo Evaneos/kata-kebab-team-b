@@ -4,21 +4,32 @@ namespace Kata\Kebab;
 
 class Kebab
 {
-    public $vegeIngredients = [];
-    public $nonVegeIngredients = [];
+    private $ingredients;
 
-    public function setVegeIngredients(array $ingredients)
+    public function __construct($ingredients)
     {
-        $this->vegeIngredients = $ingredients;
-    }
-
-    public function setNonVegeIngredients(array $ingredients)
-    {
-        $this->nonVegeIngredients = $ingredients;
+        $this->ingredients = $ingredients;
     }
 
     public function isVegetarian()
     {
-        return empty($this->nonVegeIngredients);
+        foreach ($this->ingredients as $ingredient) {
+            if (!$ingredient->isVegetarian()) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public function isPescaterian()
+    {
+        foreach ($this->ingredients as $ingredient) {
+            if (!$ingredient->isPescaterian()) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

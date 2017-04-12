@@ -2,6 +2,7 @@
 namespace Kata\Kebab\Tests;
 
 use Kata\Kebab\Kebab;
+use Kata\Kebab\Ingredient;
 
 class KebabTest extends \PHPUnit_Framework_TestCase
 {

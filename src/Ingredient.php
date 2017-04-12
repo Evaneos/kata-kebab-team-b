@@ -6,12 +6,12 @@ class Ingredient
 {
     private $isVegetarian;
 
-    private $isPescatarian;
+    private $isPescaterian;
 
-    public function __construct($isVegetarian = false, $isPescatarian = false)
+    public function __construct($isVegetarian = false, $isPescaterian = false)
     {
         $this->isVegetarian = $isVegetarian;
-        $this->isPescatarian = $isPescatarian;
+        $this->isPescaterian = $isPescaterian;
     }
 
     public function isVegetarian()
@@ -19,8 +19,8 @@ class Ingredient
         return $this->isVegetarian;
     }
 
-    public function isPescatarian()
+    public function isPescaterian()
     {
-        return $this->isPescatarian;
+        return $this->isPescaterian;
     }
 }

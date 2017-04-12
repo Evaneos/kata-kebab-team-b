@@ -10,7 +10,7 @@ class IngredientTest extends \PHPUnit_Framework_TestCase
      */
     public function it_should_be_vegetarian()
     {
-        $ingredient = new Ingredient('salade', true);
+        $ingredient = new Ingredient(true);
         $this->assertEquals($ingredient->isVegetarian(), true);
     }
 

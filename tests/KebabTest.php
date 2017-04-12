@@ -10,24 +10,34 @@ class KebabTest extends \PHPUnit_Framework_TestCase
      */
     public function it_should_be_vegetarian()
     {
-        $ingredientsVege = [
-            'salade',
-            'tomate'
-        ];
-        
-        $kebab = new Kebab();
-        $kebab->setVegeIngredients($ingredientsVege);
+        $kebab = new Kebab([new Ingredient(true, false)]);
         $this->assertEquals($kebab->isVegetarian(), true);
     }
 
+    /**
+     * @test
+     */
     public function it_not_should_be_vegetarian()
     {
-        $ingredientsNonVege = [
-            'poulet'
-        ];
-
-        $kebab = new Kebab();
-        $kebab->setNonVegeIngredients($ingredientsNonVege);
+        $kebab = new Kebab([new Ingredient(false, false)]);
         $this->assertEquals($kebab->isVegetarian(), false);
+    }
+
+    /**
+     * @test
+     */
+    public function it_should_be_pescaterian()
+    {
+        $kebab = new Kebab([new Ingredient(true, true)]);
+        $this->assertEquals($kebab->isPescaterian(), true);
+    }
+
+    /**
+     * @test
+     */
+    public function it_not_should_be_pescaterian()
+    {
+        $kebab = new Kebab([new Ingredient(false, false)]);
+        $this->assertEquals($kebab->isPescaterian(), false);
     }
 }
